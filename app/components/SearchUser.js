@@ -16,7 +16,7 @@ var SearchUser = React.createClass({
 	render : function(){
 		return (
 			<div className="jumbotron">
-				<h1>Hello World</h1>
+				<h1 className="text-center">Search User Github</h1>
 				<div className="row">
 					<form onSubmit={this.whenSubmit}>
 						<div className="form-group">
