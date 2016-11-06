@@ -31,4 +31,11 @@ var SearchUser = React.createClass({
 	}
 });
 
+//definindo propTypes - objetos/funções que são necessárias para o componente funcionar
+
+SearchUser.propTypes = {
+	updateUser:React.PropTypes.func.isRequired,
+	updateRepos:React.PropTypes.func.isRequired,
+};
+
 module.exports = SearchUser;
