@@ -1,25 +1,27 @@
 var React = require('react');
+var SearchUser = require('./SearchUser');
 
 //criando component
 var GitHub = React.createClass({
-
+	getInitialState : function(){
+		return{
+			user:null,
+			repos:[],
+		};
+	},
+	updateUser : function(user){
+		this.setState({user : user});
+	},
+	updateRepos : function(repos){
+		this.setState({repos : repos});
+	},
 	render : function(){
 		return (
-			<div className="jumbotron">
-				<h1>Hello World</h1>
-				<div className="row">
-					<form>
-						<div className="form-group">
-							<label>Usuário</label>
-	  						<input type="text" className="form-control"/>
-						</div>
-						<button type="submit" className="btn btn-primary">Buscar</button>
-					</form>
-				</div>
-			</div>
+			<SearchUser
+				updateUser={this.updateUser}
+				updateRepos={this.updateRepos}/>
 		);
 	}
-
 });
 
 module.exports = GitHub;
