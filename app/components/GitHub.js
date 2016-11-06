@@ -1,5 +1,6 @@
 var React = require('react');
 var SearchUser = require('./SearchUser');
+var UserInfo = require('./UserInfo');
 
 //criando component
 var GitHub = React.createClass({
@@ -17,9 +18,14 @@ var GitHub = React.createClass({
 	},
 	render : function(){
 		return (
+			<div>
 			<SearchUser
 				updateUser={this.updateUser}
 				updateRepos={this.updateRepos}/>
+			<UserInfo 
+				user={this.state.user}
+				repos={this.state.repos}/>
+			</div>
 		);
 	}
 });
